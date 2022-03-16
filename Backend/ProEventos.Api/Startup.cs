@@ -29,8 +29,6 @@ namespace ProEventos.Api
             services.AddDbContext<DataContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            
-
             services.AddControllers()
             .AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling
                 = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
