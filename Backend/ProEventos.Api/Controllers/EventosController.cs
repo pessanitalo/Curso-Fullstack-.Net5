@@ -36,7 +36,7 @@ namespace ProEventos.Api.Controllers
             }
 
         }
-
+        //retorna um evento por id
         [HttpGet("{id}")]
         public async Task<IActionResult> GetIdAssync(int id)
         {
