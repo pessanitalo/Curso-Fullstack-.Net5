@@ -55,7 +55,7 @@ namespace ProEventos.Api.Controllers
             }
 
         }
-
+        //faz a busca por tema
         [HttpGet("tema/{tema}")]
         public async Task<IActionResult> GetTemaAssync(string tema)
         {
