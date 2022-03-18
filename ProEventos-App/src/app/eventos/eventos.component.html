@@ -1,5 +1,34 @@
-<div *ngFor="let evento of eventos">
-<h1>Tema: {{evento.tema}}</h1>
-<h1>Local: {{evento.local}}</h1>
-</div>
+<h2>Eventos</h2>
+<hr>
 
+<form action="" class="form-inline">
+  <div class="form-group mb-2">
+    <input type="text" class="form-control mr-2" placeholder="buscar....">
+    <button class="btn btn-outline-success">Pesquisar</button>
+  </div>
+</form>
+
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>#</th>
+      <th>Imagem</th>
+      <th>Tema</th>
+      <th>Local</th>
+      <th>Data</th>
+      <th>Qtd Pessoas</th>
+      <th>Lote</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>#</th>
+      <th>Imagem</th>
+      <th>Tema</th>
+      <th>Local</th>
+      <th>Data</th>
+      <th>Qtd Pessoas</th>
+      <th>Lote</th>
+    </tr>
+  </tbody>
+</table>
