@@ -1,18 +1,20 @@
 <h2>Eventos</h2>
 <hr>
 
-<form action="" class="form-inline">
+<div  class="form-inline">
   <div class="form-group mb-2">
-    <input type="text" class="form-control mr-2" placeholder="buscar....">
+    <input type="text" class="form-control mr-2" [(ngModel)]="filtroLista" placeholder="buscar....">
     <button class="btn btn-outline-success">Pesquisar</button>
   </div>
-</form>
+</div>
+
 
 <table class="table table-striped">
   <thead class="thead-dark">
     <tr>
       <th>#</th>
-      <th>Imagem</th>
+      <th><button type="button" class="btn btn-outline-light btn-sm"
+        (click)="alterarImagem()">{{!exibirImagem ? 'Mostrar' : 'Ocultar'}}</button></th>
       <th>Tema</th>
       <th>Local</th>
       <th>Data</th>
@@ -21,14 +23,14 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th>#</th>
-      <th>Imagem</th>
-      <th>Tema</th>
-      <th>Local</th>
-      <th>Data</th>
-      <th>Qtd Pessoas</th>
-      <th>Lote</th>
+    <tr *ngFor="let evento of eventosFiltrados">
+      <td>{{ evento.id }}</td>
+      <td> <img *ngIf="exibirImagem" src="/assets/{{ evento.imagemUrl }}" alt="" width="50px"></td>
+      <td>{{ evento.tema }}</td>
+      <td>{{ evento.local }}</td>
+      <td>{{ evento.dataEvento }}</td>
+      <td>{{ evento.qtdPessoa }}</td>
+      <td>{{ evento.lotes }}</td>
     </tr>
   </tbody>
 </table>
