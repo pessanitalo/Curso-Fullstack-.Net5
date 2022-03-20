@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace ProEventos.Application.Dtos
@@ -12,6 +13,7 @@ namespace ProEventos.Application.Dtos
         public string Local { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório.")]
+        
         public string DataEvento { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório."),

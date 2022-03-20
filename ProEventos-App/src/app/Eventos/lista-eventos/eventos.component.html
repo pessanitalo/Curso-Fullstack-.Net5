@@ -8,12 +8,12 @@
   </div>
 </div>
 
-
 <table class="table table-striped">
   <thead class="thead-dark">
     <tr>
-      <th><button type="button" class="btn btn-outline-light btn-sm"
-        (click)="alterarImagem()">{{!exibirImagem ? 'Mostrar' : 'Ocultar'}}</button></th>
+      <th><button type="button" class="btn btn-outline-light btn-sm" (click)="alterarImagem()"><i
+            class="{{!exibirImagem ? 'fa fa-eye' : 'fa fa-eye-slash'}}"></i>
+          {{!exibirImagem ? 'Mostrar' : 'Ocultar'}}</button></th>
       <th>#</th>
       <th>Tema</th>
       <th>Local</th>
@@ -32,11 +32,20 @@
       <td>{{ evento.local }}</td>
       <td>{{ evento.dataEvento }}</td>
       <td>{{ evento.qtdPessoa }}</td>
-      <td>{{ evento.lotes }}</td>
+      <td>{{ evento.lotes | mask:"00/00/0000"}}</td>
       <td>
-        <button type="button" class="btn btn-primary btn-sm mr-1">Editar</button>
-        <button type="button" class="btn btn-danger btn-sm mr-1">Excluir</button>
+        <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fa fa-edit"></i>Editar</button>
+        <button type="button" class="btn btn-danger btn-sm mr-1" (click)="openModal(template)"><i class="fa fa-trash"></i>Excluir</button>
       </td>
     </tr>
   </tbody>
 </table>
+
+
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p>Deseja excluir esse item ?</p>
+    <button type="button" class="btn btn-default">Sim</button>
+    <button type="button" class="btn btn-primary" (click)="naoConfirm()">Não</button>
+  </div>
+</ng-template>
