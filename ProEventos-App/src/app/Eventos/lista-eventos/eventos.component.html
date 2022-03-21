@@ -1,4 +1,4 @@
-<app-titulo [titulo]="'Eventos'"></app-titulo>
+<app-titulo [titulo]="'Eventos'" [iconClass]="'fa fa-calendar'" [botaoListar]="true"></app-titulo>
 
 <hr>
 
@@ -36,7 +36,8 @@
       <td>{{ evento.lotes | mask:"00/00/0000"}}</td>
       <td>
         <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fa fa-edit"></i>Editar</button>
-        <button type="button" class="btn btn-danger btn-sm mr-1" (click)="openModal(template)"><i class="fa fa-trash"></i>Excluir</button>
+        <button type="button" class="btn btn-danger btn-sm mr-1" (click)="openModal(template)"><i
+            class="fa fa-trash"></i>Excluir</button>
       </td>
     </tr>
   </tbody>
