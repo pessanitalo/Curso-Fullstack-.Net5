@@ -36,8 +36,8 @@ namespace ProEventos.Persistence.Repository
         public async Task<Palestrante[]> GetAllPalestrantesByNomeAsync(string nome)
         {
             IQueryable<Palestrante> query = _context.Palestrantes
-                    .Include(e => e.RedesSociais);
-            query = query.OrderBy(e => e.Id).Where(e => e.Nome.ToLower().Contains(nome.ToLower()));
+            .Include(e => e.RedesSociais);
+            query = query.OrderBy(e => e.Id).Where(e => e.User.Nome.ToLower().Contains(nome.ToLower()));
 
             return await query.ToArrayAsync();
         }
