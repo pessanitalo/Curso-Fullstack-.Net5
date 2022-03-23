@@ -1,49 +1,53 @@
 <app-titulo [titulo]="'Eventos'" [iconClass]="'fa fa-calendar'" [botaoListar]="true"></app-titulo>
-
 <hr>
-
-<div class="form-inline">
-  <div class="form-group mb-2">
-    <input type="text" class="form-control mr-2" [(ngModel)]="filtroLista" placeholder="buscar por tema ou local...">
-    <!-- <button class="btn btn-outline-success">Pesquisar</button> -->
+<div class="card rounded shadow-sm p-2">
+  <div class="d-flex">
+    <div class="flex-fill pr-3">
+      <div class="form-group mb-2">
+        <input type="text" class="form-control mr-2" [(ngModel)]="filtroLista"
+          placeholder="buscar por Tema ou Local...">
+      </div>
+    </div>
+    <div>
+      <a class="d-flex btn btn-outline-primary" href="#">
+        <i class="fa fa-plus-circle my-1"></i>
+        <b class="ml-1">Novo</b>
+      </a>
+    </div>
   </div>
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th><button type="button" class="btn btn-outline-light btn-sm" (click)="alterarImagem()"><i
+              class="{{!exibirImagem ? 'fa fa-eye' : 'fa fa-eye-slash'}}"></i>
+            {{!exibirImagem ? 'Mostrar' : 'Ocultar'}}</button></th>
+        <th>#</th>
+        <th>Tema</th>
+        <th>Local</th>
+        <th>Data</th>
+        <th>Qtd Pessoas</th>
+        <th>Lote</th>
+        <th>Opções</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let evento of eventosFiltrados">
+        <td> <img *ngIf="exibirImagem" src="/assets/{{ evento.imagemUrl }}" alt="" width="50px"></td>
+        <td>{{ evento.id }}</td>
+        <td>{{ evento.tema }}</td>
+        <td>{{ evento.local }}</td>
+        <td>{{ evento.dataEvento }}</td>
+        <td>{{ evento.qtdPessoa }}</td>
+        <td>{{ evento.lotes | mask:"00/00/0000"}}</td>
+        <td>
+          <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fa fa-edit"></i>Editar</button>
+          <button type="button" class="btn btn-danger btn-sm mr-1" (click)="openModal(template)"><i
+              class="fa fa-trash"></i>Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
-
-<table class="table table-striped">
-  <thead class="thead-dark">
-    <tr>
-      <th><button type="button" class="btn btn-outline-light btn-sm" (click)="alterarImagem()"><i
-            class="{{!exibirImagem ? 'fa fa-eye' : 'fa fa-eye-slash'}}"></i>
-          {{!exibirImagem ? 'Mostrar' : 'Ocultar'}}</button></th>
-      <th>#</th>
-      <th>Tema</th>
-      <th>Local</th>
-      <th>Data</th>
-      <th>Qtd Pessoas</th>
-      <th>Lote</th>
-      <th>Opções</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let evento of eventosFiltrados">
-
-      <td> <img *ngIf="exibirImagem" src="/assets/{{ evento.imagemUrl }}" alt="" width="50px"></td>
-      <td>{{ evento.id }}</td>
-      <td>{{ evento.tema }}</td>
-      <td>{{ evento.local }}</td>
-      <td>{{ evento.dataEvento }}</td>
-      <td>{{ evento.qtdPessoa }}</td>
-      <td>{{ evento.lotes | mask:"00/00/0000"}}</td>
-      <td>
-        <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fa fa-edit"></i>Editar</button>
-        <button type="button" class="btn btn-danger btn-sm mr-1" (click)="openModal(template)"><i
-            class="fa fa-trash"></i>Excluir</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-
 <ng-template #template>
   <div class="modal-body text-center">
     <p>Deseja excluir esse item ?</p>
