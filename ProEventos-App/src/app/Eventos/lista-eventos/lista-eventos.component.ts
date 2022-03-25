@@ -1,16 +1,16 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { ToastrService } from 'ngx-toastr';
 import { Evento } from '../models/Evento';
 import { EventoService } from '../services/evento.service';
-import { ToastrService } from 'ngx-toastr';
-import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
-  selector: 'app-eventos',
-  templateUrl: './eventos.component.html',
-  styleUrls: ['./eventos.component.scss']
+  selector: 'app-lista-eventos',
+  templateUrl: './lista-eventos.component.html',
+  styleUrls: ['./lista-eventos.component.scss']
 })
-export class EventosComponent implements OnInit {
+export class ListaEventosComponent implements OnInit {
 
   public eventosFiltrados: any = [];
   public eventos: any;
@@ -36,14 +36,12 @@ export class EventosComponent implements OnInit {
       (evento: any) => evento.tema.toLowerCase().indexOf(filtrarPor) !== -1 || evento.local.toLowerCase().indexOf(filtrarPor) !== -1
     )
   }
-
   constructor(
     private eventoService: EventoService,
     private modalService: BsModalService,
     private toastr: ToastrService,
     private spinner: NgxSpinnerService
   ) { }
-
 
   ngOnInit(): void {
     this.spinner.show();
@@ -53,7 +51,7 @@ export class EventosComponent implements OnInit {
   alterarImagem() {
     this.exibirImagem = !this.exibirImagem;
   }
-
+  
   public getEventos(): void {
     this.eventoService.getEventos().subscribe({
       next: (eventos: Evento[]) => {

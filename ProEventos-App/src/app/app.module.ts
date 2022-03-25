@@ -5,7 +5,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EventosComponent } from './Eventos/lista-eventos/eventos.component';
 import { PalestrantesComponent } from './palestrantes/lista-palestrantes/palestrantes.component';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { FormsModule } from '@angular/forms';
@@ -14,14 +13,19 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { TituloComponent } from './shared/titulo/titulo.component';
+import { DetalheEventosComponent } from './Eventos/detalhe-eventos/detalhe-eventos.component';
+import { ListaEventosComponent } from './Eventos/lista-eventos/lista-eventos.component';
+import { EventosComponent } from './Eventos/eventos/eventos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EventosComponent,
     PalestrantesComponent,
     NavBarComponent,
-    TituloComponent
+    TituloComponent,
+    DetalheEventosComponent,
+    ListaEventosComponent,
+    EventosComponent
   ],
   imports: [
     BrowserModule,
