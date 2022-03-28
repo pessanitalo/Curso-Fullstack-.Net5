@@ -16,6 +16,10 @@ import { TituloComponent } from './shared/titulo/titulo.component';
 import { DetalheEventosComponent } from './Eventos/detalhe-eventos/detalhe-eventos.component';
 import { ListaEventosComponent } from './Eventos/lista-eventos/lista-eventos.component';
 import { EventosComponent } from './Eventos/eventos/eventos.component';
+import { UserComponent } from './User/user/user.component';
+import { LoginComponent } from './User/login/login.component';
+import { NovoUsuarioComponent } from './User/novo-usuario/novo-usuario.component';
+import { PerfilComponent } from './User/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,11 @@ import { EventosComponent } from './Eventos/eventos/eventos.component';
     TituloComponent,
     DetalheEventosComponent,
     ListaEventosComponent,
-    EventosComponent
+    EventosComponent,
+    UserComponent,
+    LoginComponent,
+    NovoUsuarioComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
