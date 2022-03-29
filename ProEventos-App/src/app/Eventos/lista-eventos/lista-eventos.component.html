@@ -1,5 +1,3 @@
-<!-- <app-titulo [titulo]="'Eventos'" [iconClass]="'fa fa-calendar'" [botaoListar]="true"></app-titulo>
-<hr> -->
 <div class="card rounded shadow-sm p-2">
   <div class="d-flex">
     <div class="flex-fill pr-3">
@@ -9,9 +7,9 @@
       </div>
     </div>
     <div>
-      <a class="d-flex btn btn-outline-primary" href="#">
+      <a class="d-flex btn btn-outline-primary">
         <i class="fa fa-plus-circle my-1"></i>
-        <b class="ml-1">Novo</b>
+        <b class="ml-1" [routerLink]="['/eventos/detalhe']">Novo</b>
       </a>
     </div>
   </div>

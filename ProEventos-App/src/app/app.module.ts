@@ -20,6 +20,10 @@ import { UserComponent } from './User/user/user.component';
 import { LoginComponent } from './User/login/login.component';
 import { NovoUsuarioComponent } from './User/novo-usuario/novo-usuario.component';
 import { PerfilComponent } from './User/perfil/perfil.component';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+
+
 
 @NgModule({
   declarations: [
@@ -40,6 +44,8 @@ import { PerfilComponent } from './User/perfil/perfil.component';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    CollapseModule.forRoot(),
+    BsDropdownModule.forRoot(),
     FormsModule,
     NgxMaskModule.forRoot(),
     ModalModule.forRoot(),
