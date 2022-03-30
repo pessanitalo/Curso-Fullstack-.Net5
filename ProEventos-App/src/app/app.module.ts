@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PalestrantesComponent } from './palestrantes/lista-palestrantes/palestrantes.component';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskModule } from 'ngx-mask';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { ToastrModule } from 'ngx-toastr';
@@ -22,6 +22,7 @@ import { NovoUsuarioComponent } from './User/novo-usuario/novo-usuario.component
 import { PerfilComponent } from './User/perfil/perfil.component';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -40,9 +41,12 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
     PerfilComponent
   ],
   imports: [
+    //CommonModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    //FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     CollapseModule.forRoot(),
     BsDropdownModule.forRoot(),

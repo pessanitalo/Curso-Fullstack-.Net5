@@ -1,4 +1,6 @@
 import { Lote } from "./Lote"
+import { PalestranteEvento } from "./PalestranteEvento"
+import { RedeSocial } from "./RedeSocial"
 
 export interface Evento {
     id: number,
@@ -9,5 +11,7 @@ export interface Evento {
     ImagemUrl: string,
     Telefone: number,
     email: string
-    lote: Lote[]
+    lote: Lote[],
+    redesSociais: RedeSocial[],
+    palestrantesEvemtos: PalestranteEvento[]
 }
