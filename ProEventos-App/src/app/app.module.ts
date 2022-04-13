@@ -45,7 +45,6 @@ import { CommonModule } from '@angular/common';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    //FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     CollapseModule.forRoot(),

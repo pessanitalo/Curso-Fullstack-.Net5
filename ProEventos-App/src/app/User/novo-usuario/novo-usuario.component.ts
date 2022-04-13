@@ -1,5 +1,6 @@
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, AbstractControlOptions } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { ValidatorField } from 'src/app/shared/helpers/ValidatorsField';
 
 @Component({
   selector: 'app-novo-usuario',
@@ -13,14 +14,19 @@ export class NovoUsuarioComponent implements OnInit {
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+
+    const formOptions: AbstractControlOptions = {
+      validators: ValidatorField.MustMatch('senha', 'confirmeSenha')
+    };
+
     this.form = this.fb.group({
-      primeiroNome:[''],
-      ultimoNome:[''],
-      email:[''],
-      userName:[''],
-      senha:[''],
-      confirmeSenha:['']
-    })
+      primeiroNome: [''],
+      ultimoNome: [''],
+      email: [''],
+      userName: [''],
+      senha: [''],
+      confirmeSenha: [''],
+    }, formOptions);
   }
 
 }
